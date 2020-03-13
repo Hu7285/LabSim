@@ -22,7 +22,7 @@ int main()
 	//Pide al usuario que ingrese un numero y lo asigna a x.
 	printf("Please enter a number \n");
 	scanf("%d", &x);
-	/*if: verfica que el numero ingresado sea mayor a 1
+	/*if: verfica que el numero ingresado sea menor o igual 1
 	Verdad: imprimira que el usuario ingreso un numero invalido y cancelara el programa.
 	Falso: verificara si el numero es primo.
 	*/
