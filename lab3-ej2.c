@@ -86,7 +86,7 @@ int main()
 				}
 			}
 			//NOTA: esta parte es completamente inecesario, simplemente fue por estetica.
-			//Una vez que verifica si es primo imprimira los numeros y al final de la secuencia se imprimira el texto "END.".
+			//Una vez que verifica si es primo imprimira los numeros primos y al final de la secuencia se imprimira el texto "END.".
 			//if: verifica si c<2 y si i1=x2, Verdad: imprimira el ultimo numero primo de la lista de primos y el texto "END." al final.
 			if ( c < 2 & i1 == x2 ) {
 				printf("%d, END. \n", i1);
