@@ -18,8 +18,7 @@ char m[]: este array tendra la funcion de 'proteger' el programa cuando el usuar
 via=0, vna=9: numeros enteros que nos serviran de apoyo para desplegar los numeros del array v de forma ascendente, via servira como punto de partida y vna como punto de llegada.
 vid=9, vnd=0: numeros enteros que nos serviran de apoyo para desplegar los numeros del array v de forma descendente, via servira como punto de partida y vna como punto de llegada.
 v[]: vector creado por el programa que contiene los numeros pares en el rango [2,20].
-NOTA: el problema no especifica que metodologia utilizar para ordenar los vectores y como el vector esta fijo es mucho mas rapido y eficiente simplemente imprimir los vectores ordenados. Dado que le problema no especifica, no es necesario utilizar un metodo de ordenacion.
-NOTA: el programa podria ser mas eficiente si quitaramos las constantes vni y vnd, pero no es necesario ser eficientes.
+NOTA: el problema no especifica que metodologia utilizar para ordenar los vectores y como el vector esta fijo es mucho mas rapido y eficiente simplemente imprimir los vectores ordenados. Dado que le problema no especifica, no es necesario utilizar un metodo de ordenacion, tambien, el programa podria ser mas eficiente si quitaramos las constantes vni y vnd, pero no es necesario ser eficientes.
 */
 char m[];
 int via=0, vna=9;
