@@ -27,7 +27,7 @@ int vid=9, vnd=0;
 int v[]={2,4,6,8,10,12,14,16,18,20};
 void main()
 {
-    //Desplegar al usuario: muestra el menu principal y pede que ingrese una opcion.
+    //Despliegar al usuario: muestra el menu principal y pede que ingrese una opcion.
     printf("        MAIN MENU     \n");
     printf("------------------------- \n");
     printf("*a). ascendent \n");
