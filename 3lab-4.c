@@ -51,7 +51,7 @@ void main(){
         printf(" %lf", v2[vi]);
     }
     printf("\n");
-    //NOTA: para algunas operaciones entre vectores se tiene un patron sencillo el cual se podia hacer por medio de un for-loop pero para otras operaciones el patron era demasiado complicado y era mas sencillo simplemente ingresar los elementos de forma directa.
+    //NOTA: para algunas operaciones entre vectores se tiene un patron sencillo el cual se podia hacer por medio de un for-loop pero para otras operaciones el patron era demasiado complicado y era mas sencillo ingresar los elementos de forma directa.
     //Magnitud de vi y guardarla a m1.
     printf("The magnitud of the first vector, v1, is: \n");
     //formula directa para la magnitud de vi.
