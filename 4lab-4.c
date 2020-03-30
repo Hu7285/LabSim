@@ -1,7 +1,7 @@
 /*
 Autor: Lab4Host
 Compilador: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Compilador: gcc 4lab-4.c -o 4lab-4
+Compilador: gcc 4lab-4.c -o 4lab-4 -lm
 Fecha: Fri Mar 27 05:48:29 CST 2020
 Librerias: 
 Resumen: El usuario debe ingresar 2 matrices 3X3 y una constante, el programa debe de almacenar estos datos y
@@ -14,19 +14,39 @@ Salidas: respuestas
 #include <math.h>
 //numerar los pasos del pseudocodigo
 
+/*Declaracion de variables:
+mata[3][3], matb[3][3]: arrays [3][3] de elementos enteros, formaran las matrices ingresadas por el usuario.
+c: entero, constante que ingresara el usuario.
+mataxc[3][3]: array [3][3] de elementos enteros, guardara el valor de la multiplicacion entre mata y la constante c.
+s[3][3]: array [3][3] de elementos enteros, guardara el valor de la suma entre mata y matb.
+r[3][3]: array [3][3] de elementos enteros, guardara el valor de la resta entre mata y matb.
+m[3][3]: array [3][3] de elementos enteros, guardara el valor de la multiplicacion entre mata y matb.
+trb[3][3]: array [3][3] de elementos enteros, guardara el valor de la transpuesta de matb.
+adja[3][3]: array [3][3] de elementos enteros, guardara el valor de la matriz adjunta de mata.
+deta: entero, guardara el valor de la determinante de a.
+ina[3][3]: array [3][3] de elementos double, guardara el valor de la matriz inversa de mata.
+i, j: apoyaran para la creacion y manejo de las matrices.
+*/
 int c, mata[3][3], matb[3][3];
 int mataxc[3][3], s[3][3], r[3][3], m[3][3], deta, trb[3][3], adja[3][3];
 double ina[3][3];
 int i, j;
 void main() {
-    printf("Please enter values for mata. \n");
+    //Creacion de la matA.
+    printf("Please enter the values for matA. \n");
+    //Por medio de dos for-loops se estara trabajanda con cada elemento de los arrays, el primer for-loop sera para las filas y el segundo for-loop sera para las columnas. 
+    //for: loop que empieza en i=0, verifica si i<3, Verdadero: entra a otro for, luego aumenta i por 1.
     for ( i=0; i<3; i++ ) {
+        //for: loop que empieza en j=0, verifica si j<3, luego aumenta i por 1.
         for ( j=0; j<3; j++ ) {
+            //Despliega pide al usuario que ingrese un valor para cada componente de la matriz matA y luego lo guarada al elemento mata[i][j].
             printf("Please enter %d%d: ", i+1,j+1);
             scanf("%d", &mata[i][j]);
         }
     }
-    printf("The mata is: \n");
+    //Despliega: matriz matA.
+    //Usando un metodo similar a lo anterior creando for-loops.
+    printf("The matb is: \n");
     for ( i=0; i<3; i++ ) {
         for ( j=0; j<3; j++ ) {
             printf(" %d", mata[i][j]);
@@ -35,14 +55,16 @@ void main() {
             }
         }
     }
-    printf("Please enter values for matb. \n");
+    //Creacion de la matB.
+    printf("Please enter the values for matB. \n");
+    //Usando el mismo metodo para matA.
     for ( i=0; i<3; i++ ) {
         for ( j=0; j<3; j++ ) {
             printf("Please enter %d%d: ", i+1,j+1);
             scanf("%d", &matb[i][j]);
         }
     }
-    printf("The matb is: \n");
+    printf("The matB is: \n");
     for ( i=0; i<3; i++ ) {
         for ( j=0; j<3; j++ ) {
             printf(" %d", matb[i][j]);
@@ -51,10 +73,14 @@ void main() {
             }
         }
     }
+    //Pide al usuario y luego guarda la constanta a c.
     printf("Please enter a constant c: \n");
     scanf("%d", &c);
     printf("The constant c is: %d \n", c);
-    printf("Matrix mataxc: \n");
+    //NOTA: para algunas operaciones entre matrices se tiene un patron sencillo el cual se podia hacer por medio de un for-loop pero para otras operaciones el patron era demasiado complicado y era mas sencillo ingresar los elementos de forma directa.
+    //Multiplicacion matA*c:
+    //Usando el metodo ya establecido, se tomara cada elemento de la matA y multiplicarlo por la constante c. Es muy similar a como se crearon las matrices pero solo cambia el segundo for-loop, luego, volviedo a utilizar el mismo metodo se desplegara el resultado de la multiplicacion guardada al array mataxc.
+    printf("Matrix matAxc: \n");
     for ( i=0; i<3; i++ ) {
         for ( j=0; j<3; j++ ) {
             mataxc[i][j]=c*mata[i][j];
@@ -68,6 +94,8 @@ void main() {
             }
         }
     }
+    //Suma entre matA y matB.
+    //Usando el metodo ya establecido, se tomara el elemento matA[i][j] y se le sumara al elemento matB[i][j]. Es muy similar a la multiplicacion, luego, volviedo a utilizar el mismo metodo se desplegara el resultado de la suma guaradada al array s[i][j].
     printf("Adition of both matrix: \n");
     for ( i=0; i<3; i++ ) {
         for ( j=0; j<3; j++ ) {
@@ -82,6 +110,8 @@ void main() {
             }
         }
     }
+    //Resta entre matA y matB.
+    //Usando el metodo ya establecido, se tomara el elemento matA[i][j] y se le restara al elemento matB[i][j]. Es muy similar a la suma, luego, volviedo a utilizar el mismo metodo se desplegara el resultado de la resta guaradada al array r[i][j].
     printf("Substraction of both matrix: \n");
     for ( i=0; i<3; i++ ) {
         for ( j=0; j<3; j++ ) {
@@ -96,7 +126,9 @@ void main() {
             }
         }
     }
-    printf("Multiplication mataxmatb: \n");
+    //Multiplicacion entre matA y matB.
+    //Para este caso el algoritmo para obtener cada elemento de la multiplicacion es demasiado complicada y era mucho mas sencillo ingresara de forma directa cada componente, luego usando el metodo ya establecido se desplegara la multiplicacion guardada en matAxmatB.
+    printf("Multiplication matAxmatB: \n");
     m[0][0]=mata[0][0]*matb[0][0]+mata[0][1]*matb[1][0]+mata[0][2]*matb[2][0];
     m[1][0]=mata[0+1][0]*matb[0][0]+mata[0+1][1]*matb[1][0]+mata[0+1][2]*matb[2][0];
     m[2][0]=mata[0+2][0]*matb[0][0]+mata[0+2][1]*matb[1][0]+mata[0+2][2]*matb[2][0];
@@ -114,10 +146,14 @@ void main() {
             }
         }
     }
-    printf("Determinante de mata: \n");
+    //Determinante de matA.
+    //Para este caso el algoritmo para obtener  determinante es demasiado complicada y era mucho mas sencillo ingresara de forma directa la formula, luego usando el metodo ya establecido se desplegara la determinante guardada en deta.
+    printf("Determinante de matA: \n");
     deta=mata[0][0]*mata[1][1]*mata[2][2]+mata[0][1]*mata[1][2]*mata[2][0]+mata[1][0]*mata[2][1]*mata[0][2]-mata[0][2]*mata[1][1]*mata[2][0]-mata[0][1]*mata[1][0]*mata[2][2]-mata[1][2]*mata[2][1]*mata[0][0];
     printf("%d \n", deta);
-    printf("Transpuesta de matb: \n");
+    //Transpuesta de matB.
+    //Usando el metodo ya establecido, se tomara el elemento matB[i][j] y se cambiara por matB[j][i]. Luego, volviedo a utilizar el mismo metodo se desplegara el resultado guaradada al array trb[i][j].
+    printf("Transpuesta de matB: \n");
     for ( i=0; i<3; i++ ) {
         for ( j=0; j<3; j++ ) {
             trb[i][j]=matb[j][i];
@@ -131,9 +167,11 @@ void main() {
             }
         }
     }
-    printf("Inverse de mata: \n");
+    //Inversa de matA.
+    //Para este caso el algoritmo para obtener la inversa de matA es demasiado complicada y era mucho mas sencillo ingresara de forma directa cada elemento, luego usando el metodo ya establecido se desplegara la matriz inversa guardada en ina.
+    printf("Inverse de matA: \n");
     if ( deta==0 ) {
-        printf("The matrix mata does not have an inverse \n");
+        printf("The matrix matA does not have an inverse \n");
     }
     else {
         adja[0][0]=+mata[1][1]*mata[2][2]-mata[2][1]*mata[1][2];

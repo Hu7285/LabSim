@@ -1,7 +1,7 @@
 /*
 Autor: Lab4Host
 Compilador: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Compilador: gcc 3lab-4.c -o 3lab-4
+Compilador: gcc 3lab-4.c -o 3lab-4 -lm
 Fecha: Fri Mar 27 03:42:41 CST 2020
 Librerias: 
 Resumen: El usuario ingresara dos posiciones de la forma (x,y,z), con esto el programa los almacenara como vectores y realizara las siguientes operaciones: magnitud de cada vector, suma de los dos vectores, producto escalar y producto vectorial.

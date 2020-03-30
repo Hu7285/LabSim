@@ -14,13 +14,13 @@ Salidas: a, d
 #include <math.h>
 
 /*Declaracion de Variables:
-char m[]: este array tendra la funcion de 'proteger' el programa cuando el usuario no ingrese una opcion valida, se usara un array para que de esta forma el programa solo lea una vez lo ingresado y solo responda una vez.
+char m[256]: este array tendra la funcion de 'proteger' el programa cuando el usuario no ingrese una opcion valida, se usara un array para que de esta forma el programa solo lea una vez lo ingresado y solo responda una vez.
 via=0, vna=9: numeros enteros que nos serviran de apoyo para desplegar los numeros del array v de forma ascendente, via servira como punto de partida y vna como punto de llegada.
 vid=9, vnd=0: numeros enteros que nos serviran de apoyo para desplegar los numeros del array v de forma descendente, via servira como punto de partida y vna como punto de llegada.
 v[]: vector creado por el programa que contiene los numeros pares en el rango [2,20].
 NOTA: el problema no especifica que metodologia utilizar para ordenar los vectores y como el vector esta fijo es mucho mas rapido y eficiente simplemente imprimir los vectores ordenados. Dado que le problema no especifica, no es necesario utilizar un metodo de ordenacion, el programa podria ser mas eficiente si quitaramos las constantes vni y vnd, pero no es necesario ser eficientes.
 */
-char m[];
+char m[256];
 int via=0, vna=9;
 int vid=9, vnd=0;
 int v[]={2,4,6,8,10,12,14,16,18,20};
@@ -36,7 +36,7 @@ void main()
     while ( scanf("%s", &m[256]) ) {
         //switch: crea el menu y los caso.
         //NOTA: utilizamos el array m[] para proteger el programa para el caso en que el usuario no ingresa un valor acceptable, se utiliza el array para leer lo ingresado por el usuario como un solo bloque en vez de leerlo de forma individual.
-        switch (m[]) {
+        switch (m[256]) {
         //caso 'a': despliega el array de forma ascendente, una vez despliege los numeros se sale del switch.
         case 'a':
             //for: loop que empieza en via y termina en vna, verifica si via<=vna, Verdadero: imprime el elemento v[via] del array v[].
@@ -61,7 +61,7 @@ void main()
             break;
         }
         //if: verifica el valor del array m[]=a o m[]=b, Verdadero: se saldra del while.
-        if ( m[]=='a' || m[]=='d' ) {
+        if ( m[256]=='a' || m[256]=='d' ) {
             break;
         }
     }
