@@ -1,7 +1,7 @@
 /*
 Autor: Lab4Host
 Compilador: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Compilador: gcc 4lab-4.c -o 4lab-4 -lm
+Compilador: gcc lab4-ej4.c -o lab4-ej4 -lm
 Fecha: Fri Mar 27 05:48:29 CST 2020
 Librerias: 
 Resumen: El usuario debe ingresar 2 matrices 3X3 y una constante, el programa debe de almacenar estos datos y
@@ -29,8 +29,8 @@ i, j: apoyaran para la creacion y manejo de las matrices.
 */
 int c, mata[3][3], matb[3][3];
 int mataxc[3][3], s[3][3], r[3][3], m[3][3], deta, trb[3][3], adja[3][3];
-double ina[3][3];
-int i, j;
+double ina[3][3], x[10], ga[3][3], gb[3][3], g;
+int i, j, k;
 void main() {
     //Creacion de la matA.
     printf("Please enter the values for matA. \n");
@@ -197,4 +197,50 @@ void main() {
             }
         }
     }
+    //Reduccion Gauss-Jordan para matriz A.
+    printf("The Gauss-Jordan reduction of matA is: \n");
+    //Usando el metodo ya establecido estara comprobando por medio de un if cada elementod de la matA.
+    for ( i=0; i<3; i++ ) {
+        for ( j=0; j<3; j++ ) {
+            //if: verifica si i!=j, Verdadero: definiremos la variable g=mata[i][j]/mata[j][i] y tambien se entrara a un for loop.
+            if ( i!=j ) {
+                g=mata[i][j]/mata[j][i];
+                //for: empezando en k=o, verificara si k<4, Verdadero: empezara a definir cada elementod de ga[i][j]=ga[i][k]=mata[i][k]-g*(mata[i][j]) y por ultimo se le aumentara a k por 1.
+                for ( k=0; k<4; k++ ) {
+                    ga[i][k]=mata[i][k]-g*(mata[i][j]);
+                }
+            }
+        }
+    }
+    //Usando el metodo ya establecido se desplegara el resultado de la reduccion Gauss-Jordan para matriz A.
+    for ( i=0; i<3; i++ ) {
+        for ( j=0; j<3; j++ ) {
+            printf(" %f", ga[i][j]);
+            if ( j==2 ) {
+                printf("\n");
+            }
+        }
+    }
+    //Reduccion Gauss-Jordan para matriz B.
+    printf("The Gauss-Jordan reduction of matB is: \n");
+    //Similar al anterior.
+    for ( i=0; i<3; i++ ) {
+        for ( j=0; j<3; j++ ) {
+            if ( i!=j ) {
+                g=matb[i][j]/matb[j][i];
+                for ( k=0; k<4; k++ ) {
+                    gb[i][k]=matb[i][k]-g*(matb[i][j]);
+                }
+            }
+        }
+    }
+    for ( i=0; i<3; i++ ) {
+        for ( j=0; j<3; j++ ) {
+            printf(" %f", gb[i][j]);
+            if ( j==2 ) {
+                printf("\n");
+            }
+        }
+    }
+    printf("END \n");
 }

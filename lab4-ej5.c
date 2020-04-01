@@ -1,7 +1,7 @@
 /*
 Autor: Lab4Host
 Compilador: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Compilador: gcc 5lab-4.c -o 5lab-4
+Compilador: gcc lab4-ej5.c -o lab4-ej5
 Fecha: Fri Mar 27 11:29:22 CST 2020
 Librerias: 
 Resumen: El usuario ingresara un numero entero y con este el programa encontrara su factorial.

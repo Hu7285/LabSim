@@ -1,7 +1,7 @@
 /*
 Autor: Lab4Host
 Compilador: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Compilador: gcc 6lab-4.c -o 6lab-4 -lm
+Compilador: gcc lab4-ej6.c -o lab4-ej6 -lm
 Fecha: Fri Mar 27 12:38:39 CST 2020
 Librerias: 
 Resumen: El usuario ingresa un numero entero positivo y con este el programa realizara unas sumatorias.
@@ -24,7 +24,7 @@ double sc(double n);
 double sd(double n);
 //Funcion principal.
 int main() {
-    //Declarando k de forma local.
+    //Declarando n de forma local.
     double n;
     //Pidiendo al usuario un numero y guardandolo a n.
     printf("Please enter a value: ");
@@ -41,7 +41,7 @@ return 0;
 double sa(double n) {
     //Funcion recursiva que llegara al valor de la sumatoria cuando n=1 y regresara el valor de la sumatoria.
     /*if: verifica n>1.
-    Verdad: hace la llamada recursiva y regresa la formula de la sumatoria con sa(k-1), con el valor anterior.
+    Verdad: hace la llamada recursiva y regresa la formula de la sumatoria con sa(n-1), con el valor anterior.
     Falso: regresa el valor de la sumatoria cuando n=1.
     */
     if ( n>1 ) {
@@ -57,7 +57,7 @@ double sb(double n) {
     //NOTA: esta sumatoria tiene que el caso n=1 es un valor inexistente, por lo tanto la sumatoria debe de empezar en n=2.
     //Funcion recursiva que llegara al valor de la sumatoria cuando n=2 y regresara el valor de la sumatoria.
     /*if: verifica n>2.
-    Verdad: hace la llamada recursiva y regresa la formula de la sumatoria con sa(k-1), con el valor anterior.
+    Verdad: hace la llamada recursiva y regresa la formula de la sumatoria con sb(n-1), con el valor anterior.
     Falso: regresa el valor de la sumatoria cuando n=2.
     */
     if ( n>2 ) {
@@ -72,8 +72,8 @@ double sb(double n) {
 double sc(double n) {
     //Funcion recursiva que llegara al valor de la sumatoria cuando n=1 y regresara el valor de la sumatoria.
     /*if: verifica n>1.
-    Verdad: hace la llamada recursiva y regresa la formula de la sumatoria con sa(n-1), con el valor anterior.
-    Falso: regresa el valor de la sumatoria cuando k=1.
+    Verdad: hace la llamada recursiva y regresa la formula de la sumatoria con sc(n-1), con el valor anterior.
+    Falso: regresa el valor de la sumatoria cuando n=1.
     */
     if ( n>1 ) {
         return sc(n-1)+(1/sqrt(5))*(pow((1+sqrt(5))/2,n))-(1/sqrt(5))*(pow((1-sqrt(5))/2,n));
@@ -87,9 +87,9 @@ double sc(double n) {
 double sd(double n) {
     //NOTA: esta sumatoria tiene que el caso k=1 es un valor inexistente, por lo tanto la sumatoria debe de empezar en n=2.
     //Funcion recursiva que llegara al valor de la sumatoria cuando n=2 y regresara el valor de la sumatoria.
-    /*if: verifica dnk>2.
-    Verdad: hace la llamada recursiva y regresa la formula de la sumatoria con sa(k-1), con el valor anterior.
-    Falso: regresa el valor de la sumatoria cuando k=2.
+    /*if: verifica n>2.
+    Verdad: hace la llamada recursiva y regresa la formula de la sumatoria con sd(n-1), con el valor anterior.
+    Falso: regresa el valor de la sumatoria cuando n=2.
     */
     if ( n>2 ) {
         return sd(n-1)+(0.1)*(3*pow(2,n-2)+4);

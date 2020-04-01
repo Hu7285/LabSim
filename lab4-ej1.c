@@ -1,7 +1,7 @@
 /*
 Autor: Lab4Host
 Compilador: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Compilador: gcc 1lab-4.c -o 1lab-4
+Compilador: gcc lab4-ej1.c -o lab4-ej1
 Fecha: Thu Mar 26 22:16:18 CST 2020
 Librerias: 
 Resumen: Con un vector ingresado de 10 elementos, numeros pares del 2 al 20, el programa debe de pedir al usuario como quiere ver el vector, de forma ascendente (a) o descendente (d), si el usuario no ingresa un valor correcto el programa debe de volver a preguntarle al usuario hasta que el usuario ingrese un valor acceptado.
